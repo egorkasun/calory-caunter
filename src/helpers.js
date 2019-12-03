@@ -21,3 +21,9 @@ export const calculateCallories = ({
 
   return ((hb + mg) / 2) * coefficient
 }
+
+export const calculatePFC = calories => ({
+  proteins: calories * 0.25 / 4,
+  fats: calories * 0.25 / 9,
+  carbohydrates: calories * 0.5 / 4
+});

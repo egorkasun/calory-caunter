@@ -22,7 +22,11 @@
 }
 
 .header {
-  text-align: center;
+  justify-content: center;
+  border: 2px dashed brown;
+  width: 50%;
+  display: flex;
+  margin: 20px auto;
 }
 
 .counter-form {
@@ -34,11 +38,17 @@
   & label {
     display: flex;
     justify-content: space-between;
+    color: yellowgreen;
   }
 
   & .sex-input {
     display: flex;
     justify-content: space-between;
+
+    & .text {
+      // border-bottom: 1px solid black;
+      text-decoration: underline;    
+    }
 
     & label {
       display: inline;
@@ -51,5 +61,13 @@
 }
 
 .result {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+ 
+  & ul {
+    padding-left: 20px;
+    margin: 0;
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { calculateCallories } from './helpers';
+import { calculateCallories, calculatePFC } from './helpers';
 
 export const App = () => {
   const [sex, setSex] = React.useState(null);
@@ -9,6 +9,8 @@ export const App = () => {
   const [weight, setWeight] = React.useState("");
   const [activity, setActivity] = React.useState("");
   const [callories, setCallories] = React.useState(null);
+
+  const { proteins, fats, carbohydrates } = calculatePFC(callories);
 
   return (
     <div>
@@ -27,7 +29,9 @@ export const App = () => {
         className="counter-form"
       >
         <p className="sex-input">
-          Выберете ваш пол:
+          <span className="text">
+            Выберите ваш пол:
+          </span>
           {' '}
           <label>
             Мужской
@@ -91,8 +95,9 @@ export const App = () => {
           <select value={activity} onChange={ev => setActivity(ev.target.value)} required>
             <option value="" disabled hidden>Выберете...</option>
             <option value="1">Базовый обмен веществ</option>
-            <option value="1.2">Сидячий образ жизни, не занимаетесь спортом</option>
-            <option value="1.5">Подвижный образ жизни, не занимаетесь спортом</option>
+            <option value="1.2">Сидячий образ жизни, не занимаетесь фитнесом</option>
+            <option value="1.4">Сидячий образ жизни, занятия фитнесом 2-3 раза в неделю</option>
+            <option value="1.5">Подвижный образ жизни, не занимаетесь фитнесом</option>
             <option value="1.6">Подвижный образ жизни, занятия фитнесом 2-3 раза в неделю</option>
             <option value="1.7">Сидячий образ жизни, занятия фитнесом 5-6 раз в неделю</option>
             <option value="1.8">Подвижный образ жизни, занятия фитнесом 5-6 раз в неделю</option>
@@ -102,8 +107,13 @@ export const App = () => {
         <button type="submit">Посчитать</button>
       </form>
       {callories && (
-        <div>
-          <h4 className="result">Ваша норма в каллориях: {callories.toFixed(2)} ккал</h4>
+        <div className="result">
+          <h4>Ваша норма в каллориях: {callories.toFixed(2)} ккал</h4>
+          <ul>
+            <li>Белки: {proteins.toFixed(2)} г</li>
+            <li>Жиры: {fats.toFixed(2)} г</li>
+            <li>Углеводы: {carbohydrates.toFixed(2)} г</li>
+          </ul>
         </div>
       )}
     </div>
