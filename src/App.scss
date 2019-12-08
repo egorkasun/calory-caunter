@@ -1,49 +1,38 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
+@import "./variables";
 
 .header {
   justify-content: center;
-  border: 2px dashed brown;
-  width: 50%;
+  width: 100%;
   display: flex;
-  margin: 20px auto;
+  padding: 20px;
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: 'Segoe UI Light';
+  text-transform: uppercase;
+  box-shadow: 0px 0px 15px 0px #8c8c8c;
 }
 
 .counter-form {
   display: flex;
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto;
+  background-color: white;
   flex-direction: column;
+  box-shadow: 5px 5px 10px 0px #8c8c8c;
+  padding: 30px;
+  border-radius: 5px;
 
   & label {
     display: flex;
     justify-content: space-between;
-    color: yellowgreen;
   }
 
   & .sex-input {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    line-height: 1;
 
     & .text {
       // border-bottom: 1px solid black;
@@ -57,6 +46,39 @@
 
   & input[type="number"] {
     margin: 10px 0;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid $input-border-color;
+    border-radius: 5px;
+    width: 20%;
+  }
+
+  & select {
+    height: 27px;
+    border: 1px solid $input-border-color;
+    padding: 5px 8px 5px 10px;
+    border-radius: 5px;
+    width: 24%;
+    cursor: pointer;
+  }
+
+
+  & button[type="submit"] {
+    color: white;
+    border: none;
+    width: 50%;
+    margin: 10px auto;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: coral;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: darken(coral, 10%);
+    }
   }
 }
 

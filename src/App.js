@@ -56,6 +56,7 @@ export const App = () => {
             />
           </label>
         </p>
+        <hr />
         <label>
           Ваш возвраст (в годах):
           {' '}
@@ -90,10 +91,10 @@ export const App = () => {
           />
         </label>
         <p className="sex-input">
-          Выберете вашу активность:
+          Выберите вашу активность:
           {' '}
           <select value={activity} onChange={ev => setActivity(ev.target.value)} required>
-            <option value="" disabled hidden>Выберете...</option>
+            <option value="" disabled hidden>Выбирете...</option>
             <option value="1">Базовый обмен веществ</option>
             <option value="1.2">Сидячий образ жизни, не занимаетесь фитнесом</option>
             <option value="1.4">Сидячий образ жизни, занятия фитнесом 2-3 раза в неделю</option>
@@ -105,17 +106,17 @@ export const App = () => {
           </select>
         </p>
         <button type="submit">Посчитать</button>
+        {callories && (
+          <div className="result">
+            <h4>Ваша норма в каллориях: {callories.toFixed(2)} ккал</h4>
+            <ul>
+              <li>Белки: {proteins.toFixed(2)} г</li>
+              <li>Жиры: {fats.toFixed(2)} г</li>
+              <li>Углеводы: {carbohydrates.toFixed(2)} г</li>
+            </ul>
+          </div>
+        )}
       </form>
-      {callories && (
-        <div className="result">
-          <h4>Ваша норма в каллориях: {callories.toFixed(2)} ккал</h4>
-          <ul>
-            <li>Белки: {proteins.toFixed(2)} г</li>
-            <li>Жиры: {fats.toFixed(2)} г</li>
-            <li>Углеводы: {carbohydrates.toFixed(2)} г</li>
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
