@@ -15,7 +15,7 @@
 
 .counter-form {
   display: flex;
-  width: 50%;
+  width: 45%;
   margin: 20px auto;
   background-color: white;
   flex-direction: column;
@@ -91,5 +91,33 @@
   & ul {
     padding-left: 20px;
     margin: 0;
+  }
+}
+
+.shwarc {
+  width: 300px;
+  height: 390px;
+  margin: 20px 10px 10px 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 0px #8c8c8c;
+}
+
+.container {
+  display: flex;
+
+  & .sidebar {
+    width: 290px;
+    height: 320px;
+    background-color:#fbfc7e;
+    margin: 20px 10px 10px 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 0px #8c8c8c;
+    padding: 30px;
+    font-size: 18px;
+    color:#160beb;
+  }
+
+  & .error {
+    color: red;
   }
 }
