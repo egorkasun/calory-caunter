@@ -1,0 +1,47 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  text-align: center;
+}
+
+.app-wrapper {
+  display: grid; 
+   
+  grid-template-areas: 
+  "header header header"
+  "picture counter info"
+  "chat chat chat";
+
+  grid-template-columns: 600px 1fr 400px;
+  grid-template-rows: 150px 1fr 200px;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: aquamarine;
+}
+
+.picture {
+  grid-area: picture;
+}
+/*.picture img {
+  width: 500px;
+}*/
+.counter {
+  grid-area: counter;
+  background-color: rgb(77, 8, 238); 
+}
+
+.info {
+  grid-area: info;
+  background-color: cadetblue;
+}
+
+.chat {
+  grid-area: chat;
+  background-color: cornsilk;
+}
